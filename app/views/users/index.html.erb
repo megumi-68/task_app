@@ -1,8 +1,8 @@
 <h3>スケジュール一覧</h3>
 
-　<% if flash[:notice] %>
+ <% if flash[:notice] %>
       <p class="notice"><%= flash[:notice] %></p>
-　<% end %>
+ <% end %>
  
     <table>
       <thead>
@@ -24,8 +24,8 @@
           <tr>
             <td><%= user.id %></td>
             <td><%= user.title %></td>
-            <td><%= user.start_day.to_s(:datetime_jp) %></td>
-            <td><%= user.end_day.to_s(:datetime_jp)%></td>
+            <td><%= l user.start_day, format: :short , default: '-' %></td>
+            <td><%= l user.end_day, format: :short  , default: '-'%></td>
             <td><% if user.allday == "1" %>
              ○
             <% else user.allday == "0" %>
